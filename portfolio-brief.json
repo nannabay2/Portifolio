@@ -1,0 +1,166 @@
+{
+  "project": "Nanna — personal portfolio website",
+  "goal": "A mobile-first portfolio for a designer, developer, creator and tutor. Alternate deep green and light neutral sections, no gradients, expressive typography, useful motion and reduced-motion support.",
+  "brand": {
+    "colors": {
+      "deep_green": "#013E27",
+      "light_neutral": "#EEEBDA",
+      "white": "#ffffff",
+      "status_dot": "#7cc576",
+      "whatsapp": "#25d366"
+    },
+    "typography": {
+      "headings": "Unbounded",
+      "body": "Plus Jakarta Sans",
+      "signature": "Mrs Saint Delafield"
+    }
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "name": "ID card hero",
+      "background": "deep_green",
+      "footer_line": "Designing apps people love; Building websites that sell; Creating prototypes for brands; creating brand identities; Based in Denmark, working worldwide",
+      "id_card": {
+        "front": "Portrait, creative tech designer, available worldwide, Nanna, Product Designer + AI Creator, signature and ID 0001",
+        "back": "What I do: Designer, Builder and Creator"
+      }
+    },
+    {
+      "id": "about",
+      "name": "Photo collage",
+      "background": "light_neutral",
+      "layout": "Two columns. Photo collage and heading 'I design things people actually use.'",
+      "copy": "UI/UX designer, website developer and tutor. I've worked with a few brands and helping them create new concepts in e-commerce, media tech and on-boarding experiences + create my own helthcare app idea."
+    },
+    {
+      "id": "services",
+      "name": "What I do",
+      "background": "deep_green",
+      "rows": [
+        {
+          "title": "Designer",
+          "text": "Mobile apps, web UI, design systems, prototypes"
+        },
+        {
+          "title": "Developer",
+          "text": "VS Code, Shopify, WordPress and"
+        },
+        {
+          "title": "Creator",
+          "text": "Adobe, Figma, brand campaigns"
+        },
+        { "title": "Tutor", "text": "helping new students learn and grow" }
+      ]
+    },
+    {
+      "id": "stats",
+      "name": "Numbers",
+      "background": "light_neutral",
+      "items": [
+        { "value": 10, "suffix": "+", "label": "Projects delivered" },
+        { "value": 2, "suffix": "+", "label": "Brands and clients" },
+        { "value": 1, "suffix": "k+", "label": "Followers across platforms" },
+        { "value": 2, "suffix": "+", "label": "Years designing apps and sites" }
+      ]
+    },
+    {
+      "id": "marquee",
+      "name": "Tool strip",
+      "background": "deep_green",
+      "items": [
+        "Figma",
+        "Framer",
+        "Shopify",
+        "WordPress",
+        "Claude",
+        "Adobe",
+        "ChatGPT",
+        "Figma Make"
+      ]
+    },
+    {
+      "id": "work",
+      "name": "Selected work",
+      "background": "light_neutral",
+      "projects_in_order": [
+        {
+          "name": "Fjera",
+          "category": "healthcare",
+          "type": "Webapp",
+          "case_study": {
+            "lead": "A habit-tracking web app designed to make everyday wellbeing feel more approachable.",
+            "description": "Fjera combines habit tracking with a personal bird companion that guides and motivates users through small daily challenges.",
+            "role": "UX/UI · User Research · Development",
+            "tools": "Figma · React · Vite · Supabase",
+            "research": "I tested the concept with five users through Think Aloud testing and used their feedback to refine the onboarding, challenges and overall user experience.",
+            "result": "A calm and supportive digital experience that makes building healthy habits feel less like a checklist and more personal."
+          }
+        },
+        {
+          "name": "To-K-You",
+          "category": "e-commerce",
+          "type": "website",
+          "case_study": {
+            "lead": "A high-end multi-brand fashion webshop designed around individuality and self-expression.",
+            "description": "To-K-You reimagines the online fashion experience as a digital gallery, where unique designer pieces become the centre of attention.",
+            "role": "UX/UI · Visual Design · Branding",
+            "tools": "Figma · VS Code · Desktop & Mobile",
+            "approach": "The concept focuses on visual hierarchy, usability and creating a distinctive shopping experience for users who see fashion as a form of self-expression."
+          }
+        },
+        {
+          "name": "Mellemrum.",
+          "category": "social event",
+          "type": "website"
+        },
+        { "name": "VUUH", "category": "Onboarding flow", "type": "plugin" },
+        { "name": "LA RŌUGE", "category": "e-commerce", "type": "Website" },
+        {
+          "name": "Deliver Anywhere",
+          "category": "Onboarding flow",
+          "type": "app"
+        }
+      ]
+    },
+    {
+      "id": "about_me",
+      "name": "About me",
+      "background": "deep_green",
+      "copy": "I'm Nanna, a designer, developer and creator based in Denmark. I turn rough ideas into apps and websites that people enjoy using. With a keen eye for detail, a creative mindset, and plenty of Pepsi Max, I have worked on a wide range of projects—both through my studies and personal passion projects. These include websites, web applications, and e-commerce solutions, where I enjoy combining functionality with thoughtful, aesthetic design.",
+      "loves": [
+        "Designing clean, friendly website/mobile apps",
+        "Creating new concepts and experiences",
+        "Exploring innovative design solutions"
+      ],
+      "socials": ["@nannabayjacobsen", "LinkedIn: Nanna Bay Jacobsen"]
+    },
+    {
+      "id": "contact",
+      "name": "Final CTA + footer",
+      "background": "light_neutral",
+      "email": "nbnnannabay@gmail.com",
+      "phone number": "+45 50940934",
+      "LinkedIn": "Nanna Bay Jacobsen",
+      "LinkedIn URL": "https://www.linkedin.com/in/nanna-bay-s-jacobsen-b35772234/?isSelfProfile=true"
+    }
+  ],
+  "animation_system": {
+    "reveal_on_scroll": "Reveal content when it enters the viewport; animate transforms and opacity.",
+    "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+    "performance": "Use passive scroll listeners and respect prefers-reduced-motion."
+  },
+  "assets_needed": [
+    "ID card portrait",
+    "Sofa photo",
+    "Workspace photo",
+    "Blue outfit photo with lapel mic",
+    "Project screenshots for Aven, OceanLink, Defter, Kova, Readly and Deliver Anywhere"
+  ],
+  "avoid": [
+    "Gradients",
+    "More than two main background colours",
+    "Labels over project thumbnails",
+    "Content touching screen edges"
+  ]
+}
