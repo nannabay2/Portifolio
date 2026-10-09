@@ -963,6 +963,11 @@ img {
   transform: scale(1);
 }
 
+.project-card:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 8px;
+}
+
 .project-art {
   position: relative;
   height: min(43svh, 400px);
@@ -973,6 +978,16 @@ img {
   border: 1px solid rgba(1, 62, 39, 0.08);
   border-radius: 16px;
   background: var(--white);
+  transition:
+    transform 350ms var(--ease),
+    box-shadow 350ms var(--ease),
+    border-color 350ms var(--ease);
+}
+
+.project-card:is(:hover, :focus-visible) .project-art {
+  transform: translateY(-7px);
+  border-color: rgba(1, 62, 39, 0.28);
+  box-shadow: 0 18px 38px rgba(1, 62, 39, 0.16);
 }
 
 .project-art--1 {
