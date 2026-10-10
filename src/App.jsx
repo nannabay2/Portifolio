@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Route, Routes, useLocation, useParams } from "react-router-dom";
 import FjeraCaseStudy from "./pages/fjera.jsx";
+import MellemrumCaseStudy from "./pages/mellemrum.jsx";
 import ToKYouCaseStudy from "./pages/to-k-you.jsx";
 
 const INSTAGRAM_URL = "https://www.instagram.com/nannabayjacobsen/";
@@ -611,20 +612,29 @@ function ProjectCard({ project, index }) {
 function ProjectArtwork({ project, index }) {
   const isFjera = slugify(project.name) === "fjera";
   const isToKYou = slugify(project.name) === "to-k-you";
+  const isMellemrum = slugify(project.name) === "mellemrum";
 
   return (
     <div
-      className={`project-art project-art--${index + 1}${isFjera ? " project-art--fjera" : ""}${isToKYou ? " project-art--to-k-you" : ""}`}
+      className={`project-art project-art--${index + 1}${isFjera ? " project-art--fjera" : ""}${isToKYou ? " project-art--to-k-you" : ""}${isMellemrum ? " project-art--mellemrum" : ""}`}
       aria-label={`${project.type} project preview`}
     >
-      {isFjera || isToKYou ? (
+      {isFjera || isToKYou || isMellemrum ? (
         <img
           className="project-art-image"
-          src={isFjera ? "/projects/fjera7.svg" : "/projects/to-k-you.svg"}
+          src={
+            isFjera
+              ? "/projects/fjera7.svg"
+              : isToKYou
+                ? "/projects/to-k-you.svg"
+                : "/projects/mellem-gallery/muckup-mellemrum.svg"
+          }
           alt={
             isFjera
               ? "Fjera-app vist på to mobiltelefoner"
-              : "To-K-You fashion webshop design"
+              : isToKYou
+                ? "To-K-You fashion webshop design"
+                : "Mellemrum social event website main page"
           }
         />
       ) : (
@@ -758,7 +768,9 @@ function ProjectPage({ projects }) {
             <ProjectArtwork project={project} index={projectIndex} />
           </div>
         </section>
-        {slugify(project.name) === "to-k-you" ? (
+        {slugify(project.name) === "mellemrum" ? (
+          <MellemrumCaseStudy project={project} />
+        ) : slugify(project.name) === "to-k-you" ? (
           <ToKYouCaseStudy project={project} />
         ) : project.case_study ? (
           <FjeraCaseStudy project={project} />
