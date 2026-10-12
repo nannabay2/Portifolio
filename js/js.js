@@ -118,7 +118,7 @@ async function startPortfolio() {
         <button class="id-card" type="button" aria-label="Flip Nanna's profile card" aria-pressed="false">
 					<span class="id-card__inner">
 						<span class="badge-face badge-front">
-              <span class="badge-photo-wrap"><img src="/images/Tezza-5566.jpg" alt="Nanna Bay Jacobsen" /><span class="badge-photo-label">UX/UI Designer</span><span class="badge-photo-globe">◎ AVAILABLE WORLDWIDE</span></span>
+              <span class="badge-photo-wrap"><img src="images/Tezza-5566.jpg" alt="Nanna Bay Jacobsen" /><span class="badge-photo-label">UX/UI Designer</span><span class="badge-photo-globe">◎ AVAILABLE WORLDWIDE</span></span>
               <span class="badge-copy"><span class="badge-name">Nanna</span><span class="badge-role">Product and web Designer</span><span class="availability"><i></i>Looking for an internship</span><span class="badge-code"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><small>ID 0001</small></span></span>
 						</span>
 						<span class="badge-face badge-back">
@@ -137,7 +137,7 @@ async function startPortfolio() {
 
 		<section class="about section-pink section-pad" id="about">
 			<div class="about-collage reveal reveal-from-left">
-        <figure class="photo-main"><img src="/images/Tezza-1609.jpg" alt="Nanna Bay Jacobsen" /><figcaption>01 — A little introduction</figcaption></figure>
+        <figure class="photo-main"><img src="images/Tezza-1609.jpg" alt="Nanna Bay Jacobsen" /><figcaption>01 — A little introduction</figcaption></figure>
         <figure class="photo-small"><img src="https://images.unsplash.com/photo-1591382696684-38c427c7547a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Creative workspace" /></figure>
         <span class="hand-note">hi, I'm Nanna</span>
 			</div>
@@ -162,7 +162,7 @@ async function startPortfolio() {
 		</section>
 
 		<section class="about-me section-purple section-pad" id="about-me">
-      <div class="about-me-photo reveal"><img src="/images/Tezza-5566.jpg" alt="Temporary portrait placeholder; replace with Nanna's photo" /><span class="photo-caption">NANNA BAY S. JACOBSEN · DENMARK</span></div>
+      <div class="about-me-photo reveal"><img src="images/Tezza-5566.jpg" alt="Temporary portrait placeholder; replace with Nanna's photo" /><span class="photo-caption">NANNA BAY S. JACOBSEN · DENMARK</span></div>
 			<div class="about-me-copy reveal reveal-from-right"><p class="eyebrow">The person behind the pixels</p><h2>About me<span>.</span></h2><span class="feature-pill">✳ Multimedia Design Student</span><p class="about-me-intro">${escapeHtml(sections.about_me.copy)}</p><h3>A few things I love</h3><ul class="love-list">${lovesMarkup}</ul><div class="social-links">${socialsMarkup}</div></div>
 		</section>
 

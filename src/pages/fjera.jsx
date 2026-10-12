@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { assetUrl } from "../asset-url.js";
 
 const fjeraSlides = [
   { file: "mainpagefjera.svg", title: "Main page", alt: "Fjera app main page" },
@@ -113,7 +114,7 @@ function FjeraCarousel() {
           {fjeraSlides.map((slide, index) => (
             <figure className="fjera-gallery-slide" key={slide.file}>
               <img
-                src={`/projects/fjera-gallery/${slide.file}`}
+                src={assetUrl(`projects/fjera-gallery/${slide.file}`)}
                 alt={slide.alt}
                 loading={index === 0 ? "eager" : "lazy"}
                 decoding="async"

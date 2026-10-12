@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Route, Routes, useLocation, useParams } from "react-router-dom";
+import { assetUrl } from "./asset-url.js";
+import portfolioBrief from "../portfolio-brief.json";
 import FjeraCaseStudy from "./pages/fjera.jsx";
+import MellemrumCaseStudy from "./pages/mellemrum.jsx";
 import ToKYouCaseStudy from "./pages/to-k-you.jsx";
 
 const INSTAGRAM_URL = "https://www.instagram.com/nannabayjacobsen/";
@@ -30,34 +33,7 @@ function useReducedMotion() {
 }
 
 function App() {
-  const [brief, setBrief] = useState(null);
-  const [loadError, setLoadError] = useState(false);
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    fetch("/portfolio-brief.json", { signal: controller.signal })
-      .then((response) => {
-        if (!response.ok) throw new Error("Could not load portfolio data");
-        return response.json();
-      })
-      .then(setBrief)
-      .catch((error) => {
-        if (error.name !== "AbortError") setLoadError(true);
-      });
-
-    return () => controller.abort();
-  }, []);
-
-  if (loadError) {
-    return (
-      <p className="load-error">
-        The portfolio could not be loaded. Please refresh the page.
-      </p>
-    );
-  }
-
-  if (!brief) return <div className="loading-mark">NANNA</div>;
+  const brief = portfolioBrief;
 
   const sections = Object.fromEntries(
     brief.sections.map((section) => [section.id, section]),
@@ -348,7 +324,7 @@ function HomePage({ sections, projects }) {
                 <span className="badge-face badge-front">
                   <span className="badge-photo-wrap">
                     <img
-                      src="/images/Tezza-5566.jpg"
+                      src={assetUrl("images/Tezza-5566.jpg")}
                       alt="Nanna Bay Jacobsen"
                     />
                     <span className="badge-photo-label">UX/UI Designer</span>
@@ -417,7 +393,10 @@ function HomePage({ sections, projects }) {
         <section className="about section-pink section-pad" id="about">
           <div className="about-collage reveal reveal-from-left">
             <figure className="photo-main">
-              <img src="/images/Tezza-1609.jpg" alt="Nanna Bay Jacobsen" />
+              <img
+                src={assetUrl("images/Tezza-1609.jpg")}
+                alt="Nanna Bay Jacobsen"
+              />
               <figcaption>01 — A little introduction</figcaption>
             </figure>
             <figure className="photo-small">
@@ -453,7 +432,10 @@ function HomePage({ sections, projects }) {
               >
                 <span className="service-index">0{index + 1}</span>
                 <span className="service-icon" aria-hidden="true">
-                  <img src={`/SVG/${service.title.toLowerCase()}.svg`} alt="" />
+                  <img
+                    src={assetUrl(`SVG/${service.title.toLowerCase()}.svg`)}
+                    alt=""
+                  />
                 </span>
                 <h3>{service.title}</h3>
                 <p>{service.text}</p>
@@ -611,20 +593,29 @@ function ProjectCard({ project, index }) {
 function ProjectArtwork({ project, index }) {
   const isFjera = slugify(project.name) === "fjera";
   const isToKYou = slugify(project.name) === "to-k-you";
+  const isMellemrum = slugify(project.name) === "mellemrum";
 
   return (
     <div
-      className={`project-art project-art--${index + 1}${isFjera ? " project-art--fjera" : ""}${isToKYou ? " project-art--to-k-you" : ""}`}
+      className={`project-art project-art--${index + 1}${isFjera ? " project-art--fjera" : ""}${isToKYou ? " project-art--to-k-you" : ""}${isMellemrum ? " project-art--mellemrum" : ""}`}
       aria-label={`${project.type} project preview`}
     >
-      {isFjera || isToKYou ? (
+      {isFjera || isToKYou || isMellemrum ? (
         <img
           className="project-art-image"
-          src={isFjera ? "/projects/fjera7.svg" : "/projects/to-k-you.svg"}
+          src={assetUrl(
+            isFjera
+              ? "projects/fjera7.svg"
+              : isToKYou
+                ? "projects/to-k-you.svg"
+                : "projects/mellem-gallery/muckup-mellemrum.svg",
+          )}
           alt={
             isFjera
               ? "Fjera-app vist på to mobiltelefoner"
-              : "To-K-You fashion webshop design"
+              : isToKYou
+                ? "To-K-You fashion webshop design"
+                : "Mellemrum social event website main page"
           }
         />
       ) : (
@@ -660,7 +651,10 @@ function AboutMeSection({ sections }) {
   return (
     <section className="about-me section-purple section-pad" id="about-me">
       <div className="about-me-photo reveal">
-        <img src="/images/Tezza-5566.jpg" alt="Nanna Bay Jacobsen" />
+        <img
+          src={assetUrl("images/Tezza-5566.jpg")}
+          alt="Nanna Bay Jacobsen"
+        />
         <span className="photo-caption">NANNA BAY S. JACOBSEN · DENMARK</span>
       </div>
       <div className="about-me-copy reveal reveal-from-right">
@@ -758,7 +752,9 @@ function ProjectPage({ projects }) {
             <ProjectArtwork project={project} index={projectIndex} />
           </div>
         </section>
-        {slugify(project.name) === "to-k-you" ? (
+        {slugify(project.name) === "mellemrum" ? (
+          <MellemrumCaseStudy project={project} />
+        ) : slugify(project.name) === "to-k-you" ? (
           <ToKYouCaseStudy project={project} />
         ) : project.case_study ? (
           <FjeraCaseStudy project={project} />
