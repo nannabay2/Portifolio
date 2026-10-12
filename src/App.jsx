@@ -651,10 +651,7 @@ function AboutMeSection({ sections }) {
   return (
     <section className="about-me section-purple section-pad" id="about-me">
       <div className="about-me-photo reveal">
-        <img
-          src={assetUrl("images/Tezza-5566.jpg")}
-          alt="Nanna Bay Jacobsen"
-        />
+        <img src={assetUrl("images/Tezza-5566.jpg")} alt="Nanna Bay Jacobsen" />
         <span className="photo-caption">NANNA BAY S. JACOBSEN · DENMARK</span>
       </div>
       <div className="about-me-copy reveal reveal-from-right">

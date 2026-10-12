@@ -1879,20 +1879,12 @@ img {
 }
 
 .project-overview--mellemrum .mellemrum-case-study-links {
-  grid-column: 1;
-  grid-row: 3;
+  margin-top: 14px;
   display: flex;
   align-items: center;
-  justify-self: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 24px;
-}
-
-@media (max-width: 620px) {
-  .project-overview--mellemrum .mellemrum-case-study-links {
-    grid-column: 1;
-    grid-row: auto;
-  }
 }
 
 .project-detail-page {
@@ -2108,14 +2100,223 @@ img {
   grid-row: 2;
 }
 
-.project-overview--mellemrum .mellemrum-case-study-link {
+.project-overview--mellemrum .mellemrum-edits-heading {
   grid-column: 1;
   grid-row: 3;
+  margin-top: -120px;
+}
+
+.mellemrum-edits-heading .eyebrow {
+  margin: 0 0 9px;
+  color: var(--ink-muted);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.mellemrum-edits-heading h3 {
+  max-width: none;
+  margin: 0;
+  font-family: Unbounded, sans-serif;
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.mellemrum-readme-note {
+  max-width: 420px;
+  margin: 10px 0 0;
+  color: var(--ink-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.project-overview--mellemrum .mellemrum-reservation-edits {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  margin-top: 12px;
+}
+
+.project-overview--mellemrum .mellemrum-registration-site-edits {
+  grid-column: 1 / -1;
+  grid-row: 5;
+  margin-top: 12px;
+}
+
+.mellemrum-registration-site-edits h4 {
+  margin: 0 0 14px;
+  color: #003F25;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.mellemrum-reservation-edits h4 {
+  margin: 0 0 14px;
+  color: #003F25;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.mellemrum-reservation-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(14px, 2.4vw, 32px);
+}
+
+.mellemrum-reservation-comparison figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.mellemrum-reservation-comparison img {
+  width: 100%;
+  height: clamp(170px, 20vw, 270px);
+  object-fit: contain;
+  border-radius: 3px;
+  box-shadow: 0 8px 20px rgba(1, 62, 39, 0.12);
+}
+
+.mellemrum-reservation-comparison figcaption {
+  margin-top: 6px;
+  color: var(--ink-muted);
+  font-size: 10px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.mellemrum-reservation-copy {
+  max-width: 980px;
+  margin-top: clamp(18px, 3vw, 32px);
+  display: grid;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.mellemrum-reservation-copy p {
+  margin: 0;
+}
+
+.project-overview--mellemrum .mellemrum-next-steps {
+  grid-column: 1 / -1;
+  grid-row: 6;
+  margin-top: 30px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(1, 62, 39, 0.24);
+}
+
+.mellemrum-next-steps-heading {
+  max-width: 720px;
+  margin-bottom: 26px;
+}
+
+.mellemrum-next-steps-heading .eyebrow {
+  margin: 0 0 10px;
+  color: var(--ink-muted);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.mellemrum-next-steps-heading h3 {
+  margin: 0;
+  font-family: Unbounded, sans-serif;
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.mellemrum-next-steps-heading > p:last-child {
+  margin: 12px 0 0;
+  color: var(--ink-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.mellemrum-next-steps-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(28px, 6vw, 84px);
+}
+
+.mellemrum-next-steps-list article {
+  min-width: 0;
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 12px;
+  border-top: 1px solid rgba(1, 62, 39, 0.18);
+}
+
+.mellemrum-next-steps-list article > span {
+  padding-top: 2px;
+  color: var(--ink-muted);
+  font-size: 10px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.mellemrum-next-steps-list h4 {
+  margin: 0;
+  font-family: Unbounded, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.mellemrum-next-steps-list p {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.8;
 }
 
 .project-overview--mellemrum .case-study-copy {
   grid-column: 2;
   grid-row: 2;
+}
+
+.project-overview--mellemrum .mellemrum-loader-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.project-overview--mellemrum .case-study-meta {
+  margin-bottom: 16px;
+}
+
+.project-overview--mellemrum .mellemrum-loader-feature .case-study-detail {
+  max-width: 760px;
+  margin-top: 0;
+}
+
+.mellemrum-loader-figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.mellemrum-loader-figure img {
+  width: 100%;
+  max-height: 460px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.mellemrum-loader-figure figcaption {
+  margin-top: 10px;
+  color: var(--ink-muted);
+  font-size: 11px;
+  text-align: center;
+}
+
+.mellemrum-loader-feature .case-study-detail {
+  max-width: 760px;
+  margin-top: 0;
 }
 
 .project-overview-heading .eyebrow {
@@ -2533,10 +2734,43 @@ img {
 
   .project-overview--mellemrum .project-overview-heading,
   .project-overview--mellemrum .fjera-gallery,
-  .project-overview--mellemrum .mellemrum-case-study-link,
-  .project-overview--mellemrum .case-study-copy {
+  .project-overview--mellemrum .mellemrum-edits-heading,
+  .project-overview--mellemrum .mellemrum-reservation-edits,
+  .project-overview--mellemrum .mellemrum-registration-site-edits,
+  .project-overview--mellemrum .mellemrum-next-steps,
+  .project-overview--mellemrum .case-study-copy,
+  .project-overview--mellemrum .mellemrum-loader-feature {
     grid-column: 1;
     grid-row: auto;
+  }
+
+  .project-overview--mellemrum .mellemrum-loader-feature {
+    gap: 14px;
+  }
+
+  .mellemrum-reservation-comparison {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .mellemrum-reservation-comparison img {
+    height: clamp(170px, 48vw, 250px);
+  }
+
+  .mellemrum-next-steps-list {
+    grid-template-columns: 1fr;
+  }
+
+  .mellemrum-reservation-comparison {
+    min-height: 0;
+  }
+
+  .mellemrum-loader-figure img {
+    max-height: 360px;
+  }
+
+  .mellemrum-loader-feature .case-study-detail p {
+    font-size: 12px;
   }
 
   .fjera-gallery-slide {
@@ -2849,7 +3083,9 @@ img {
   align-items: center;
   gap: 24px;
   border-bottom: 1px solid rgba(1, 62, 39, 0.2);
-  transition: background-color 180ms ease, padding 180ms var(--ease);
+  transition:
+    background-color 180ms ease,
+    padding 180ms var(--ease);
 }
 
 .mellemrum-event-card:hover {
@@ -3099,7 +3335,10 @@ img {
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 160ms ease, color 160ms ease, opacity 160ms ease;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    opacity 160ms ease;
 }
 
 .mellemrum-button:hover:not(:disabled) {
@@ -3296,7 +3535,9 @@ img {
 }
 
 @keyframes mellemrum-spin {
-  to { transform: rotate(1turn); }
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 .mellemrum-footer {
