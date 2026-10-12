@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { assetUrl } from "../asset-url.js";
 
 const mellemrumSlides = [
   {
@@ -80,7 +81,7 @@ export default function MellemrumCaseStudy({ project }) {
             {mellemrumSlides.map((slide, index) => (
               <figure className="fjera-gallery-slide" key={slide.file}>
                 <img
-                  src={`/projects/mellem-gallery/${slide.file}`}
+                  src={assetUrl(`projects/mellem-gallery/${slide.file}`)}
                   alt={slide.alt}
                   loading="lazy"
                   decoding="async"

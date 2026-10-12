@@ -2034,6 +2034,62 @@ img {
   grid-row: 2;
 }
 
+.project-overview--to-k-you .to-k-you-prototype {
+  grid-column: 2;
+  grid-row: 3;
+  min-width: 0;
+  margin-top: 0;
+}
+
+.project-overview--to-k-you .to-k-you-prototype-description {
+  grid-column: 1;
+  grid-row: 3;
+  max-width: 540px;
+  padding-top: 104px;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.to-k-you-prototype-description p {
+  margin: 0 0 18px;
+}
+
+.to-k-you-prototype--mobile {
+  display: none;
+}
+
+.to-k-you-prototype-heading {
+  margin-bottom: 18px;
+}
+
+.to-k-you-prototype-heading .eyebrow {
+  margin: 0 0 8px;
+}
+
+.to-k-you-prototype-heading h3 {
+  margin: 0;
+  font-family: Unbounded, sans-serif;
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 600;
+}
+
+.to-k-you-prototype-note {
+  max-width: 420px;
+  margin: 9px 0 0;
+  color: var(--ink-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.to-k-you-prototype iframe {
+  display: block;
+  width: 100%;
+  height: clamp(640px, 85svh, 1000px);
+  border: 1px solid rgba(1, 62, 39, 0.18);
+  border-radius: 4px;
+  background: #fff;
+}
+
 .project-overview--mellemrum .project-overview-heading,
 .project-overview--mellemrum .fjera-gallery {
   grid-column: 1;
@@ -2450,9 +2506,29 @@ img {
 
   .project-overview--to-k-you .project-overview-heading,
   .project-overview--to-k-you .fjera-gallery,
-  .project-overview--to-k-you .case-study-copy {
+  .project-overview--to-k-you .case-study-copy,
+  .project-overview--to-k-you .to-k-you-prototype,
+  .project-overview--to-k-you .to-k-you-prototype-description {
     grid-column: 1;
     grid-row: auto;
+  }
+
+  .project-overview--to-k-you .to-k-you-prototype-description {
+    padding-top: 0;
+    font-size: 13px;
+  }
+
+  .to-k-you-prototype iframe {
+    height: min(78svh, 760px);
+    min-height: 420px;
+  }
+
+  .to-k-you-prototype--desktop {
+    display: none;
+  }
+
+  .to-k-you-prototype--mobile {
+    display: block;
   }
 
   .project-overview--mellemrum .project-overview-heading,
