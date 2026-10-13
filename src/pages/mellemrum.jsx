@@ -166,8 +166,8 @@ export default function MellemrumCaseStudy({ project }) {
         </div>
         <div className="mellemrum-reservation-copy">
           <p>
-            I redesigned the registration form to improve usability and create
-            a more consistent user experience.
+            I redesigned the registration form to improve usability and create a
+            more consistent user experience.
           </p>
           <p>
             Previously, users could register by entering only one name. I
@@ -217,10 +217,10 @@ export default function MellemrumCaseStudy({ project }) {
             <p>
               I refined the visual design of the sign-up website, adding more
               breathing room between letters and updating the overall look to
-              create a clearer, more spacious experience. Alongside these visible
-              changes, I also optimised and refactored the underlying code—work
-              that happens behind the scenes and is not immediately visible to
-              users.
+              create a clearer, more spacious experience. Alongside these
+              visible changes, I also optimised and refactored the underlying
+              code—work that happens behind the scenes and is not immediately
+              visible to users.
             </p>
           </section>
           <figure className="mellemrum-loader-figure">
@@ -258,16 +258,17 @@ export default function MellemrumCaseStudy({ project }) {
         </div>
         <div className="mellemrum-reservation-copy">
           <p>
-            Previously, all registrations were displayed in one table, making
-            it difficult to distinguish between events and their participants.
+            Previously, all registrations were displayed in one table, making it
+            difficult to distinguish between events and their participants.
           </p>
           <p>
-            I redesigned the layout by creating individual cards for each
-            event, displaying participant names and email addresses in a more
+            I redesigned the layout by creating individual cards for each event,
+            displaying participant names and email addresses in a more
             structured way.
           </p>
           <p>
-            This improves <strong>visual hierarchy, readability, and navigation</strong>,
+            This improves{" "}
+            <strong>visual hierarchy, readability, and navigation</strong>,
             making it easier for administrators to manage registrations and
             quickly find relevant information.
           </p>

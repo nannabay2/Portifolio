@@ -5,6 +5,7 @@ import portfolioBrief from "../portfolio-brief.json";
 import FjeraCaseStudy from "./pages/fjera.jsx";
 import MellemrumCaseStudy from "./pages/mellemrum.jsx";
 import ToKYouCaseStudy from "./pages/to-k-you.jsx";
+import VUUHCaseStudy from "./pages/vuuh.jsx";
 
 const INSTAGRAM_URL = "https://www.instagram.com/nannabayjacobsen/";
 
@@ -594,13 +595,14 @@ function ProjectArtwork({ project, index }) {
   const isFjera = slugify(project.name) === "fjera";
   const isToKYou = slugify(project.name) === "to-k-you";
   const isMellemrum = slugify(project.name) === "mellemrum";
+  const isVUUH = slugify(project.name) === "vuuh";
 
   return (
     <div
-      className={`project-art project-art--${index + 1}${isFjera ? " project-art--fjera" : ""}${isToKYou ? " project-art--to-k-you" : ""}${isMellemrum ? " project-art--mellemrum" : ""}`}
+      className={`project-art project-art--${index + 1}${isFjera ? " project-art--fjera" : ""}${isToKYou ? " project-art--to-k-you" : ""}${isMellemrum ? " project-art--mellemrum" : ""}${isVUUH ? " project-art--vuuh" : ""}`}
       aria-label={`${project.type} project preview`}
     >
-      {isFjera || isToKYou || isMellemrum ? (
+      {isFjera || isToKYou || isMellemrum || isVUUH ? (
         <img
           className="project-art-image"
           src={assetUrl(
@@ -608,14 +610,18 @@ function ProjectArtwork({ project, index }) {
               ? "projects/fjera7.svg"
               : isToKYou
                 ? "projects/to-k-you.svg"
-                : "projects/mellem-gallery/muckup-mellemrum.svg",
+                : isMellemrum
+                  ? "projects/mellem-gallery/muckup-mellemrum.svg"
+                  : "projects/VUUH-gallery/stockVUUH.svg",
           )}
           alt={
             isFjera
               ? "Fjera-app vist på to mobiltelefoner"
               : isToKYou
                 ? "To-K-You fashion webshop design"
-                : "Mellemrum social event website main page"
+                : isMellemrum
+                  ? "Mellemrum social event website main page"
+                  : "VUUH onboarding flow concept"
           }
         />
       ) : (
@@ -753,6 +759,8 @@ function ProjectPage({ projects }) {
           <MellemrumCaseStudy project={project} />
         ) : slugify(project.name) === "to-k-you" ? (
           <ToKYouCaseStudy project={project} />
+        ) : slugify(project.name) === "vuuh" ? (
+          <VUUHCaseStudy project={project} />
         ) : project.case_study ? (
           <FjeraCaseStudy project={project} />
         ) : (
