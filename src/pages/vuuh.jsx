@@ -182,7 +182,10 @@ export default function VUUHCaseStudy({ project }) {
           />
           <p className="vuuh-prototype-label">Old prototype</p>
         </section>
-        <section className="vuuh-prototype" aria-label="Updated interactive VUUH prototype">
+        <section
+          className="vuuh-prototype"
+          aria-label="Updated interactive VUUH prototype"
+        >
           <iframe
             title="VUUH interactive Figma prototype"
             src={`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(figmaPrototypeUrl)}`}
@@ -199,6 +202,157 @@ export default function VUUHCaseStudy({ project }) {
         loading="lazy"
         decoding="async"
       />
+      <section className="vuuh-persona-challenge">
+        <h3>The struggle between two personas</h3>
+        <p>
+          The main challenge was designing for both an IT-savvy persona and
+          someone less confident with technology. The onboarding needed to feel
+          quick and efficient for experienced users while providing clear
+          guidance and reassurance for those who needed more support. Users can
+          either follow the onboarding flow or explore the app on their own.
+        </p>
+        <figure className="vuuh-persona-video">
+          <video
+            autoPlay
+            controls
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            aria-label="VUUH onboarding flow demonstrating support for both personas"
+          >
+            <source
+              src={assetUrl("projects/VUUH-gallery/videomugliheder.mp4")}
+              type="video/mp4"
+            />
+            <a href={assetUrl("projects/VUUH-gallery/videomugliheder.mp4")}>
+              View the VUUH onboarding video
+            </a>
+          </video>
+        </figure>
+      </section>
+      <section className="vuuh-shopify-integration">
+        <p className="eyebrow">A connected experience</p>
+        <h3>Integrating with Shopify</h3>
+        <p>
+          Since many VUUH users rely on Shopify, connecting the two platforms
+          should feel like a natural part of getting started. The integration
+          process can guide users through connecting their Shopify account,
+          choosing the store they want to use, reviewing the requested
+          permissions, and confirming the connection. Clear steps and feedback
+          at each stage help users understand what is happening and feel
+          confident that VUUH is connected to the right store.
+        </p>
+        <figure className="vuuh-shopify-video">
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            aria-label="VUUH Shopify integration walkthrough"
+          >
+            <source
+              src={assetUrl("projects/VUUH-gallery/Shopify.mp4")}
+              type="video/mp4"
+            />
+            <a href={assetUrl("projects/VUUH-gallery/Shopify.mp4")}>
+              View the Shopify integration video
+            </a>
+          </video>
+        </figure>
+      </section>
+      <section className="vuuh-shopify-demo">
+        <figure className="vuuh-shopify-demo-video">
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            aria-label="VUUH demo product sent to a Shopify store"
+          >
+            <source
+              src={assetUrl("projects/VUUH-gallery/Demo.mp4")}
+              type="video/mp4"
+            />
+            <a href={assetUrl("projects/VUUH-gallery/Demo.mp4")}>
+              View the VUUH Shopify demo
+            </a>
+          </video>
+        </figure>
+        <div className="vuuh-shopify-demo-copy">
+          <p className="eyebrow">Product demo</p>
+          <h3>Installing a demo to show how VUUH works</h3>
+          <p>
+            VUUH can send a demo product directly to a seller’s Shopify store,
+            giving them a simple, hands-on way to see how the integration works
+            and how easy it is to use.
+          </p>
+        </div>
+      </section>
+      <section className="vuuh-professional-reflection">
+        <div className="vuuh-reflection-heading">
+          <p className="eyebrow">Professional reflection</p>
+          <h3>What did I consider?</h3>
+          <p>
+            Key considerations that shaped the redesign and onboarding
+            experience.
+          </p>
+        </div>
+        <div className="vuuh-reflection-list">
+          <article>
+            <span>01</span>
+            <div>
+              <h4>Redesigning a real product</h4>
+              <p>
+                Improve usability while preserving the parts of the company’s
+                existing identity that customers already recognise.
+              </p>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <h4>Applying UX and UI theory</h4>
+              <p>
+                Use design principles, UX laws, and familiar interface
+                conventions to guide hierarchy, consistency, and the amount of
+                information shown at each step.
+              </p>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <div>
+              <h4>Designing for accessibility</h4>
+              <p>
+                Consider users with different abilities and levels of digital
+                confidence, including people who may find technology
+                challenging.
+              </p>
+            </div>
+          </article>
+          <article>
+            <span>04</span>
+            <div>
+              <h4>Creating visual appeal</h4>
+              <p>
+                Use a considered colour palette, soft corners, and balanced
+                spacing to make the interface inviting while keeping it clear
+                and easy to use.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section className="vuuh-business-potential">
+        <p className="eyebrow">Business potential</p>
+        <h3>What could this contribute to VUUH?</h3>
+        <p>
+          A clearer onboarding experience could help more new customers
+          understand the value of VUUH and get started with confidence. A
+          reliable Shopify connection could also make the product more useful in
+          customers’ existing workflows, supporting adoption and continued use
+          over time.
+        </p>
+      </section>
     </section>
   );
 }
