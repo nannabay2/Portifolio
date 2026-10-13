@@ -203,14 +203,17 @@ export default function VUUHCaseStudy({ project }) {
         decoding="async"
       />
       <section className="vuuh-persona-challenge">
-        <h3>The struggle between two personas</h3>
-        <p>
-          The main challenge was designing for both an IT-savvy persona and
-          someone less confident with technology. The onboarding needed to feel
-          quick and efficient for experienced users while providing clear
-          guidance and reassurance for those who needed more support. Users can
-          either follow the onboarding flow or explore the app on their own.
-        </p>
+        <div className="vuuh-persona-copy">
+          <h3>The struggle between two personas</h3>
+          <p>
+            The main challenge was designing for both an IT-savvy persona and
+            someone less confident with technology. The onboarding needed to
+            feel quick and efficient for experienced users while providing
+            clear guidance and reassurance for those who needed more support.
+            Users can either follow the onboarding flow or explore the app on
+            their own.
+          </p>
+        </div>
         <figure className="vuuh-persona-video">
           <video
             autoPlay
@@ -232,20 +235,24 @@ export default function VUUHCaseStudy({ project }) {
         </figure>
       </section>
       <section className="vuuh-shopify-integration">
-        <p className="eyebrow">A connected experience</p>
-        <h3>Integrating with Shopify</h3>
-        <p>
-          Since many VUUH users rely on Shopify, connecting the two platforms
-          should feel like a natural part of getting started. The integration
-          process can guide users through connecting their Shopify account,
-          choosing the store they want to use, reviewing the requested
-          permissions, and confirming the connection. Clear steps and feedback
-          at each stage help users understand what is happening and feel
-          confident that VUUH is connected to the right store.
-        </p>
+        <div className="vuuh-shopify-integration-copy">
+          <h3>Integrating with Shopify</h3>
+          <p>
+            Since many VUUH users rely on Shopify, connecting the two platforms
+            should feel like a natural part of getting started. The integration
+            process can guide users through connecting their Shopify account,
+            choosing the store they want to use, reviewing the requested
+            permissions, and confirming the connection. Clear steps and feedback
+            at each stage help users understand what is happening and feel
+            confident that VUUH is connected to the right store.
+          </p>
+        </div>
         <figure className="vuuh-shopify-video">
           <video
+            autoPlay
             controls
+            loop
+            muted
             playsInline
             preload="metadata"
             aria-label="VUUH Shopify integration walkthrough"
@@ -263,7 +270,10 @@ export default function VUUHCaseStudy({ project }) {
       <section className="vuuh-shopify-demo">
         <figure className="vuuh-shopify-demo-video">
           <video
+            autoPlay
             controls
+            loop
+            muted
             playsInline
             preload="metadata"
             aria-label="VUUH demo product sent to a Shopify store"
@@ -278,7 +288,6 @@ export default function VUUHCaseStudy({ project }) {
           </video>
         </figure>
         <div className="vuuh-shopify-demo-copy">
-          <p className="eyebrow">Product demo</p>
           <h3>Installing a demo to show how VUUH works</h3>
           <p>
             VUUH can send a demo product directly to a seller’s Shopify store,

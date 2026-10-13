@@ -2484,17 +2484,26 @@ img {
   column-gap: clamp(28px, 6vw, 84px);
 }
 
-.vuuh-persona-challenge h3,
-.vuuh-persona-challenge > p {
+.vuuh-persona-copy {
   grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
+  text-align: right;
 }
 
-.vuuh-persona-challenge h3 {
-  grid-row: 1;
+.vuuh-persona-copy h3 {
+  margin: 0;
+  color: #003f25;
+  font-family: Unbounded, sans-serif;
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 600;
+  line-height: 1.3;
 }
 
-.vuuh-persona-challenge > p {
-  grid-row: 2;
+.vuuh-persona-copy p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.85;
 }
 
 .vuuh-persona-video {
@@ -2546,9 +2555,10 @@ img {
 
 .vuuh-shopify-demo-video {
   grid-column: 2;
-  grid-row: 1 / span 3;
+  grid-row: 1;
   min-width: 0;
   margin: 0;
+  align-self: center;
 }
 
 .vuuh-shopify-demo-video video {
@@ -2562,7 +2572,9 @@ img {
 
 .vuuh-shopify-demo-copy {
   grid-column: 1;
-  grid-row: 1 / span 3;
+  grid-row: 1;
+  align-self: center;
+  text-align: right;
 }
 
 .vuuh-shopify-demo-copy .eyebrow {
@@ -2621,15 +2633,13 @@ img {
   line-height: 1.85;
 }
 
-.vuuh-shopify-integration .eyebrow {
-  margin: 0 0 10px;
-  color: var(--ink-muted);
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
+.vuuh-shopify-integration-copy {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  align-self: center;
 }
 
-.vuuh-shopify-integration h3 {
+.vuuh-shopify-integration-copy h3 {
   margin: 0;
   color: #003f25;
   font-family: Unbounded, sans-serif;
@@ -2638,22 +2648,7 @@ img {
   line-height: 1.3;
 }
 
-.vuuh-shopify-integration .eyebrow,
-.vuuh-shopify-integration h3 {
-  grid-column: 2;
-}
-
-.vuuh-shopify-integration .eyebrow {
-  grid-row: 1;
-}
-
-.vuuh-shopify-integration h3 {
-  grid-row: 2;
-}
-
-.vuuh-shopify-integration > p {
-  grid-column: 2;
-  grid-row: 3;
+.vuuh-shopify-integration-copy p {
   margin: 12px 0 0;
   font-size: 14px;
   line-height: 1.85;
@@ -2664,6 +2659,7 @@ img {
   grid-row: 1 / span 3;
   min-width: 0;
   margin: 0;
+  align-self: center;
 }
 
 .vuuh-shopify-video video {
@@ -3175,9 +3171,7 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .vuuh-shopify-integration .eyebrow,
-  .vuuh-shopify-integration h3,
-  .vuuh-shopify-integration > p,
+  .vuuh-shopify-integration-copy,
   .vuuh-shopify-video,
   .vuuh-shopify-demo-video,
   .vuuh-shopify-demo-copy {
@@ -3189,13 +3183,16 @@ img {
     margin-top: 18px;
   }
 
+  .vuuh-shopify-integration-copy {
+    margin-top: 18px;
+  }
+
   .project-overview--vuuh > .vuuh-shopify-demo {
     grid-template-columns: 1fr;
     row-gap: 18px;
   }
 
-  .vuuh-persona-challenge h3,
-  .vuuh-persona-challenge > p,
+  .vuuh-persona-copy,
   .vuuh-persona-video {
     grid-column: 1;
     grid-row: auto;
