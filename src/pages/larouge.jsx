@@ -24,6 +24,36 @@ const laRougeSlides = [
   },
 ];
 
+const laRougeLogoSlides = [
+  {
+    file: "notlogo.svg",
+    title: "Logo concept 1",
+    alt: "First LA Rōuge Encore logo concept",
+  },
+  {
+    file: "notlogo2.svg",
+    title: "Logo concept 2",
+    alt: "Second LA Rōuge Encore logo concept",
+  },
+  {
+    file: "notlogo3.svg",
+    title: "Logo concept 3",
+    alt: "Third LA Rōuge Encore logo concept",
+  },
+  {
+    file: "reallogo.svg",
+    title: "Final logo",
+    alt: "Final LA Rōuge Encore logo",
+  },
+];
+
+const laRougeSocialSlides = [
+  { file: "ig1.svg", title: "Instagram concept 1" },
+  { file: "ig2.svg", title: "Instagram concept 2" },
+  { file: "ig3.svg", title: "Instagram concept 3" },
+  { file: "ig4.svg", title: "Instagram concept 4" },
+];
+
 const laRougePrototypeUrl =
   "https://www.figma.com/proto/edY854sbQHgaH34i7MP5h9/Case-3--design-kocept-og-udvikling?node-id=35-86&p=f&viewport=-815%2C418%2C0.54&t=jaHxXMheoJYRVcuL-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=35%3A86&page-id=35%3A84";
 const laRougeMobilePrototypeUrl =
@@ -32,6 +62,10 @@ const laRougeMobilePrototypeUrl =
 export default function LaRougeCaseStudy({ project }) {
   const trackRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const logoTrackRef = useRef(null);
+  const [activeLogoIndex, setActiveLogoIndex] = useState(0);
+  const socialTrackRef = useRef(null);
+  const [activeSocialIndex, setActiveSocialIndex] = useState(0);
 
   const goToSlide = (index) => {
     const track = trackRef.current;
@@ -49,6 +83,50 @@ export default function LaRougeCaseStudy({ project }) {
     if (!track) return;
     const index = Math.round(track.scrollLeft / track.clientWidth);
     setActiveIndex(Math.max(0, Math.min(index, laRougeSlides.length - 1)));
+  };
+
+  const goToLogoSlide = (index) => {
+    const track = logoTrackRef.current;
+    if (!track) return;
+    const boundedIndex = Math.max(
+      0,
+      Math.min(index, laRougeLogoSlides.length - 1),
+    );
+    track.scrollTo({
+      left: boundedIndex * track.clientWidth,
+      behavior: "smooth",
+    });
+    setActiveLogoIndex(boundedIndex);
+  };
+
+  const handleLogoScroll = () => {
+    const track = logoTrackRef.current;
+    if (!track) return;
+    const index = Math.round(track.scrollLeft / track.clientWidth);
+    setActiveLogoIndex(Math.max(0, Math.min(index, laRougeLogoSlides.length - 1)));
+  };
+
+  const goToSocialSlide = (index) => {
+    const track = socialTrackRef.current;
+    if (!track) return;
+    const boundedIndex = Math.max(
+      0,
+      Math.min(index, laRougeSocialSlides.length - 1),
+    );
+    track.scrollTo({
+      left: boundedIndex * track.clientWidth,
+      behavior: "smooth",
+    });
+    setActiveSocialIndex(boundedIndex);
+  };
+
+  const handleSocialScroll = () => {
+    const track = socialTrackRef.current;
+    if (!track) return;
+    const index = Math.round(track.scrollLeft / track.clientWidth);
+    setActiveSocialIndex(
+      Math.max(0, Math.min(index, laRougeSocialSlides.length - 1)),
+    );
   };
 
   return (
@@ -282,40 +360,67 @@ export default function LaRougeCaseStudy({ project }) {
             loading="lazy"
             decoding="async"
           />
-          <h4 className="la-rouge-logo-heading">Logo considerations</h4>
-          <div className="la-rouge-brand-logos">
-            <figure>
-              <img
-                src={assetUrl("projects/larouge-gallery/notlogo.svg")}
-                alt="First LA Rōuge Encore logo concept"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure>
-              <img
-                src={assetUrl("projects/larouge-gallery/notlogo2.svg")}
-                alt="Second LA Rōuge Encore logo concept"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure>
-              <img
-                src={assetUrl("projects/larouge-gallery/notlogo3.svg")}
-                alt="Third LA Rōuge Encore logo concept"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure>
-              <img
-                src={assetUrl("projects/larouge-gallery/reallogo.svg")}
-                alt="Final LA Rōuge Encore logo"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
+          <h4 className="la-rouge-logo-heading">Logo explorations</h4>
+          <div className="la-rouge-logo-carousel" aria-label="Encore logo explorations">
+            <div className="fjera-gallery-topline">
+              <p className="eyebrow">Logo concepts</p>
+              <span>
+                {String(activeLogoIndex + 1).padStart(2, "0")} / {" "}
+                {String(laRougeLogoSlides.length).padStart(2, "0")}
+              </span>
+            </div>
+            <div className="fjera-gallery-frame">
+              <button
+                className="fjera-gallery-arrow fjera-gallery-arrow--previous"
+                type="button"
+                onClick={() => goToLogoSlide(activeLogoIndex - 1)}
+                disabled={activeLogoIndex === 0}
+                aria-label="Previous logo concept"
+              >
+                ←
+              </button>
+              <div
+                className="fjera-gallery-track"
+                ref={logoTrackRef}
+                onScroll={handleLogoScroll}
+              >
+                {laRougeLogoSlides.map((slide, index) => (
+                  <figure className="fjera-gallery-slide" key={slide.file}>
+                    <img
+                      src={assetUrl(`projects/larouge-gallery/${slide.file}`)}
+                      alt={slide.alt}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      decoding="async"
+                    />
+                    <figcaption>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      {slide.title}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+              <button
+                className="fjera-gallery-arrow fjera-gallery-arrow--next"
+                type="button"
+                onClick={() => goToLogoSlide(activeLogoIndex + 1)}
+                disabled={activeLogoIndex === laRougeLogoSlides.length - 1}
+                aria-label="Next logo concept"
+              >
+                →
+              </button>
+            </div>
+            <div className="fjera-gallery-dots" aria-label="Choose a logo concept">
+              {laRougeLogoSlides.map((slide, index) => (
+                <button
+                  className={index === activeLogoIndex ? "is-active" : ""}
+                  type="button"
+                  key={slide.file}
+                  onClick={() => goToLogoSlide(index)}
+                  aria-label={`Show ${slide.title}`}
+                  aria-current={index === activeLogoIndex ? "true" : undefined}
+                />
+              ))}
+            </div>
           </div>
           <h4 className="la-rouge-logo-variations-heading">
             FINAL LOGO AND ITS VARIATIONS
@@ -344,14 +449,179 @@ export default function LaRougeCaseStudy({ project }) {
             />
           </article>
           <article>
+            <h3>Tone of voice</h3>
+            <img
+              className="la-rouge-typography-artwork"
+              src={assetUrl("projects/larouge-gallery/toneofvoice.svg")}
+              alt="LA Rōuge Encore tone of voice specimen"
+              loading="lazy"
+              decoding="async"
+            />
+            <p className="la-rouge-tone-of-voice-copy">
+              The tone of voice is feminine, playful and effortlessly
+              international. It blends Danish with English, which naturally
+              slips into everyday conversation in Denmark, then adds a French
+              expression here and there for a little je ne sais quoi. The result
+              feels familiar yet distinctive, with a confident feminine edge.
+            </p>
+          </article>
+          <article>
             <h3>Colours</h3>
             <p>
               A restrained, timeless palette supports the Scandinavian and
               French-inspired direction, while considered accents keep the
               secondhand brand feeling fresh and distinctive.
             </p>
+            <ul className="la-rouge-colour-palette" aria-label="Encore colour palette">
+              {[
+                {
+                  hex: "#D8CFAF",
+                  name: "Warm neutral",
+                  text: "#003F25",
+                  inspiration:
+                    "https://images.unsplash.com/photo-1630258235126-e20e64e76132?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+                },
+                {
+                  hex: "#FFFEFE",
+                  name: "Soft white",
+                  text: "#003F25",
+                  inspiration:
+                    "https://cdn.cosmos.so/9b57e6a5-31b9-49d5-8971-8953c116a2ed?format=webp",
+                  inspirationAlt: "Visual inspiration for the soft white colour",
+                },
+                {
+                  hex: "#66222F",
+                  name: "Deep burgundy",
+                  text: "#FFFEFE",
+                  inspiration:
+                    "https://cdn.cosmos.so/a29d660a-fb88-4b4e-9252-1ed7a601f064?format=webp",
+                  inspirationAlt:
+                    "Visual inspiration for the deep burgundy colour",
+                },
+                {
+                  hex: "#302B27",
+                  name: "Charcoal",
+                  text: "#FFFEFE",
+                  inspiration:
+                    "https://cdn.cosmos.so/21fe379e-282c-4001-903d-97e3eac35ed4?format=webp",
+                  inspirationAlt: "Visual inspiration for the charcoal colour",
+                },
+              ].map((colour) => (
+                <li className="la-rouge-colour-swatch" key={colour.hex}>
+                  <span
+                    className={`la-rouge-colour-swatch-sample${colour.inspiration ? " has-inspiration" : ""}`}
+                    style={{ backgroundColor: colour.hex }}
+                    tabIndex={colour.inspiration ? 0 : undefined}
+                  >
+                    {colour.inspiration && (
+                      <img
+                        className="la-rouge-colour-inspiration-image"
+                        src={colour.inspiration}
+                        alt={colour.inspirationAlt ?? "Colour inspiration image"}
+                        style={{ objectPosition: colour.inspirationPosition }}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
+                    <span
+                      className="la-rouge-colour-swatch-label"
+                      style={{ color: colour.text }}
+                    >
+                      <span>{colour.name}</span>
+                      <span>{colour.hex}</span>
+                    </span>
+                  </span>
+                </li>
+              ))}
+            </ul>
           </article>
         </div>
+        <section className="la-rouge-business-impact">
+          <div className="la-rouge-business-impact-copy">
+            <h3>What the rebrand means for the business</h3>
+            <p>
+              A distinct identity gives Encore a clearer role within the LA
+              Rōuge brand: recognisable as its own resale concept, yet still
+              connected to the label customers already know. This can help
+              build trust in buying pre-loved pieces directly from the brand
+              and make Encore feel like a natural place to return to, not just
+              a one-off resale platform.
+            </p>
+            <p>
+              By making the experience more cohesive and appealing, the rebrand
+              supports LA Rōuge’s ambition to keep more of the secondhand
+              journey within its own ecosystem, deepen customer relationships
+              and give existing pieces a longer life.
+            </p>
+          </div>
+          <div
+            className="la-rouge-social-carousel"
+            aria-label="Encore social media concepts"
+          >
+            <div className="fjera-gallery-topline">
+              <p className="eyebrow">Social media concepts</p>
+              <span>
+                {String(activeSocialIndex + 1).padStart(2, "0")} /{" "}
+                {String(laRougeSocialSlides.length).padStart(2, "0")}
+              </span>
+            </div>
+            <div className="fjera-gallery-frame">
+              <button
+                className="fjera-gallery-arrow fjera-gallery-arrow--previous"
+                type="button"
+                onClick={() => goToSocialSlide(activeSocialIndex - 1)}
+                disabled={activeSocialIndex === 0}
+                aria-label="Previous social media concept"
+              >
+                ←
+              </button>
+              <div
+                className="fjera-gallery-track"
+                ref={socialTrackRef}
+                onScroll={handleSocialScroll}
+              >
+                {laRougeSocialSlides.map((slide, index) => (
+                  <figure className="fjera-gallery-slide" key={slide.file}>
+                    <img
+                      src={assetUrl(`projects/larouge-gallery/${slide.file}`)}
+                      alt={slide.title}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      decoding="async"
+                    />
+                    <figcaption>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      {slide.title}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+              <button
+                className="fjera-gallery-arrow fjera-gallery-arrow--next"
+                type="button"
+                onClick={() => goToSocialSlide(activeSocialIndex + 1)}
+                disabled={activeSocialIndex === laRougeSocialSlides.length - 1}
+                aria-label="Next social media concept"
+              >
+                →
+              </button>
+            </div>
+            <div
+              className="fjera-gallery-dots"
+              aria-label="Choose a social media concept"
+            >
+              {laRougeSocialSlides.map((slide, index) => (
+                <button
+                  className={index === activeSocialIndex ? "is-active" : ""}
+                  type="button"
+                  key={slide.file}
+                  onClick={() => goToSocialSlide(index)}
+                  aria-label={`Show ${slide.title}`}
+                  aria-current={index === activeSocialIndex ? "true" : undefined}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
       </section>
     </section>
   );
