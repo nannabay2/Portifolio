@@ -208,10 +208,10 @@ export default function VUUHCaseStudy({ project }) {
           <p>
             The main challenge was designing for both an IT-savvy persona and
             someone less confident with technology. The onboarding needed to
-            feel quick and efficient for experienced users while providing
-            clear guidance and reassurance for those who needed more support.
-            Users can either follow the onboarding flow or explore the app on
-            their own.
+            feel quick and efficient for experienced users while providing clear
+            guidance and reassurance for those who needed more support. Users
+            can either follow the onboarding flow or explore the app on their
+            own.
           </p>
         </div>
         <figure className="vuuh-persona-video">

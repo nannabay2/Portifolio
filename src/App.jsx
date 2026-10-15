@@ -6,6 +6,7 @@ import FjeraCaseStudy from "./pages/fjera.jsx";
 import MellemrumCaseStudy from "./pages/mellemrum.jsx";
 import ToKYouCaseStudy from "./pages/to-k-you.jsx";
 import VUUHCaseStudy from "./pages/vuuh.jsx";
+import LaRougeCaseStudy from "./pages/larouge.jsx";
 
 const INSTAGRAM_URL = "https://www.instagram.com/nannabayjacobsen/";
 
@@ -596,13 +597,14 @@ function ProjectArtwork({ project, index }) {
   const isToKYou = slugify(project.name) === "to-k-you";
   const isMellemrum = slugify(project.name) === "mellemrum";
   const isVUUH = slugify(project.name) === "vuuh";
+  const isLaRouge = slugify(project.name) === "la-rouge";
 
   return (
     <div
-      className={`project-art project-art--${index + 1}${isFjera ? " project-art--fjera" : ""}${isToKYou ? " project-art--to-k-you" : ""}${isMellemrum ? " project-art--mellemrum" : ""}${isVUUH ? " project-art--vuuh" : ""}`}
+      className={`project-art project-art--${index + 1}${isFjera ? " project-art--fjera" : ""}${isToKYou ? " project-art--to-k-you" : ""}${isMellemrum ? " project-art--mellemrum" : ""}${isVUUH ? " project-art--vuuh" : ""}${isLaRouge ? " project-art--la-rouge" : ""}`}
       aria-label={`${project.type} project preview`}
     >
-      {isFjera || isToKYou || isMellemrum || isVUUH ? (
+      {isFjera || isToKYou || isMellemrum || isVUUH || isLaRouge ? (
         <img
           className="project-art-image"
           src={assetUrl(
@@ -612,7 +614,9 @@ function ProjectArtwork({ project, index }) {
                 ? "projects/to-k-you.svg"
                 : isMellemrum
                   ? "projects/mellem-gallery/muckup-mellemrum.svg"
-                  : "projects/VUUH-gallery/stockVUUH.svg",
+                  : isVUUH
+                    ? "projects/VUUH-gallery/stockVUUH.svg"
+                    : "projects/larouge-gallery/larougemuckup.svg",
           )}
           alt={
             isFjera
@@ -621,7 +625,9 @@ function ProjectArtwork({ project, index }) {
                 ? "To-K-You fashion webshop design"
                 : isMellemrum
                   ? "Mellemrum social event website main page"
-                  : "VUUH onboarding flow concept"
+                  : isVUUH
+                    ? "VUUH onboarding flow concept"
+                    : "LA RŌUGE rebrand and e-commerce visual concept"
           }
         />
       ) : (
@@ -761,6 +767,8 @@ function ProjectPage({ projects }) {
           <ToKYouCaseStudy project={project} />
         ) : slugify(project.name) === "vuuh" ? (
           <VUUHCaseStudy project={project} />
+        ) : slugify(project.name) === "la-rouge" ? (
+          <LaRougeCaseStudy project={project} />
         ) : project.case_study ? (
           <FjeraCaseStudy project={project} />
         ) : (
