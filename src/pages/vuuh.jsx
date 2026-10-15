@@ -149,12 +149,28 @@ export default function VUUHCaseStudy({ project }) {
         <section className="vuuh-design-approach">
           <h3>Design approach</h3>
           <p>
-            By combining a clean layout, clear visual hierarchy, and playful
-            illustrations, the redesign creates a welcoming, approachable
-            interface. A guided onboarding flow introduces users to the platform
-            step by step, reducing confusion and helping them get started with
-            confidence.
+            The redesign responds directly to three user insights: users need
+            more information, the experience does not feel intuitive, and
+            actions lack feedback. A clear visual hierarchy makes essential
+            information easier to find, while a guided onboarding flow makes
+            the platform easier to navigate step by step. Playful illustrations
+            and clear feedback help users understand what is happening and get
+            started with confidence.
           </p>
+          <ul className="vuuh-design-insights" aria-label="Key user insights">
+            <li>
+              <span>01</span>
+              <span>Lack of information</span>
+            </li>
+            <li>
+              <span>02</span>
+              <span>Nothing feels intuitive</span>
+            </li>
+            <li>
+              <span>03</span>
+              <span>No feedback</span>
+            </li>
+          </ul>
         </section>
       </div>
       <a

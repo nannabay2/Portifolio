@@ -127,7 +127,7 @@ export default function MellemrumCaseStudy({ project }) {
           </a>
           <a
             className="mellemrum-case-study-link"
-            href="https://github.com/nannabay2/forbedring-af-Mellem"
+            href="https://github.com/nannabay2/forbedring-af-Mellem."
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -2409,6 +2409,23 @@ img {
   text-align: center;
 }
 
+.la-rouge-logo-carousel {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.la-rouge-logo-carousel .fjera-gallery-slide {
+  min-height: clamp(260px, 32vw, 380px);
+  padding: 24px 68px 18px;
+  background: rgba(1, 62, 39, 0.035);
+}
+
+.la-rouge-logo-carousel .fjera-gallery-slide img {
+  width: min(100%, 700px);
+  height: min(34svh, 260px);
+}
+
 .la-rouge-brand-logos figure {
   min-width: 0;
   height: 150px;
@@ -2449,6 +2466,7 @@ img {
   padding-top: 24px;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
+  row-gap: 140px;
   border-top: 1px solid rgba(1, 62, 39, 0.2);
 }
 
@@ -2477,6 +2495,170 @@ img {
   margin: 9px 0 0;
   font-size: 13px;
   line-height: 1.8;
+}
+
+.la-rouge-tone-of-voice-copy {
+  max-width: 720px;
+  margin-top: 24px !important;
+  padding-left: 18px;
+  border-left: 2px solid #66222f;
+  color: #214b39;
+  font-size: 15px !important;
+  line-height: 1.85 !important;
+}
+
+.la-rouge-business-impact {
+  margin-top: 72px;
+  padding-top: 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+  border-top: 1px solid rgba(1, 62, 39, 0.2);
+}
+
+.la-rouge-business-impact-copy {
+  min-width: 0;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.la-rouge-business-impact h3 {
+  max-width: 760px;
+  margin: 0;
+  color: #003f25;
+  font-family: Unbounded, sans-serif;
+  font-size: clamp(20px, 2.5vw, 30px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.la-rouge-business-impact p {
+  max-width: 760px;
+  margin: 14px 0 0;
+  color: #214b39;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.la-rouge-social-carousel {
+  min-width: 0;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.la-rouge-social-carousel .fjera-gallery-slide {
+  min-height: clamp(280px, 34vw, 420px);
+  padding: 20px 58px 16px;
+  background: rgba(1, 62, 39, 0.035);
+}
+
+.la-rouge-social-carousel .fjera-gallery-slide img {
+  width: 100%;
+  height: min(36vw, 340px);
+  object-fit: contain;
+}
+
+.la-rouge-colour-palette {
+  margin: 28px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  list-style: none;
+}
+
+.la-rouge-colour-swatch {
+  min-width: 0;
+}
+
+.la-rouge-colour-swatch-sample {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  aspect-ratio: 2.6;
+  align-items: flex-end;
+  padding: 9px;
+  overflow: hidden;
+  border: 1px solid rgba(48, 43, 39, 0.16);
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.la-rouge-colour-swatch-sample.has-inspiration {
+  cursor: zoom-in;
+}
+
+.la-rouge-colour-inspiration-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.la-rouge-colour-swatch-sample.has-inspiration:is(:hover, :focus-visible)
+  .la-rouge-colour-inspiration-image {
+  opacity: 1;
+}
+
+.la-rouge-colour-swatch-sample.has-inspiration:focus-visible {
+  outline: 2px solid #003f25;
+  outline-offset: 3px;
+}
+
+.la-rouge-colour-swatch-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  gap: 8px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.la-rouge-colour-swatch-sample.has-inspiration:is(:hover, :focus-visible)
+  .la-rouge-colour-swatch-label {
+  color: #fffefe !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.la-rouge-colour-swatch-label span:first-child {
+  font-weight: 600;
+}
+
+.la-rouge-colour-swatch-label span:last-child {
+  flex: 0 0 auto;
+  opacity: 0.78;
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 620px) {
+  .la-rouge-colour-palette {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .la-rouge-colour-swatch-sample {
+    aspect-ratio: 2.15;
+    padding: 7px;
+  }
+
+  .la-rouge-colour-swatch-label {
+    font-size: 10px;
+  }
+
+  .la-rouge-colour-swatch-label span:last-child {
+    font-size: 9px;
+  }
 }
 
 .la-rouge-logo-variations-heading {
@@ -2647,6 +2829,31 @@ img {
   margin: 10px 0 0;
   font-size: 14px;
   line-height: 1.85;
+}
+
+.vuuh-design-insights {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vuuh-design-insights li {
+  padding: 10px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  border-top: 1px solid rgba(1, 62, 39, 0.16);
+  color: #003f25;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.vuuh-design-insights li span:first-child {
+  flex: 0 0 24px;
+  color: rgba(1, 62, 39, 0.58);
+  font-size: 10px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .vuuh-professional-reflection {
@@ -3471,6 +3678,39 @@ img {
 
   .la-rouge-brand-logos {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .la-rouge-logo-carousel .fjera-gallery-slide {
+    min-height: 260px;
+    padding: 22px 48px 18px;
+  }
+
+  .la-rouge-logo-carousel .fjera-gallery-slide img {
+    height: min(34svh, 210px);
+  }
+
+  .la-rouge-business-impact {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .la-rouge-business-impact-copy {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .la-rouge-social-carousel {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .la-rouge-social-carousel .fjera-gallery-slide {
+    min-height: 300px;
+    padding: 20px 48px 16px;
+  }
+
+  .la-rouge-social-carousel .fjera-gallery-slide img {
+    height: min(68vw, 300px);
   }
 
   .la-rouge-brand-logos figure {
